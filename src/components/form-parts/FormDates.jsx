@@ -4,7 +4,7 @@ import FormRow from "../layout/FormRow.jsx";
 
 const FormDates = ({ form }) => {
   return (
-      <Fieldset title="Dates de réservation">
+      <Fieldset legend="Dates de réservation">
         <FormRow>
           <label htmlFor="startDate">De :</label>
           <input

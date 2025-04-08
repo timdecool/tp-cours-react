@@ -3,7 +3,7 @@ import FormRow from "../layout/FormRow.jsx";
 
 const FormComment = ({form}) => {
   return (
-      <Fieldset title="Optionnel">
+      <Fieldset legend="Optionnel">
         <FormRow>
           <label htmlFor="comment">Tu vois quelque-chose à ajouter ?</label>
           <input

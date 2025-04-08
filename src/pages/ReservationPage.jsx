@@ -10,7 +10,7 @@ const ReservationPage = () => {
 
   return (
         <section className="p-10">
-          <Fieldset title="Présence">
+          <Fieldset legend="Présence">
             <FormRow>
               <input
                   id="isComing"

@@ -4,7 +4,7 @@ import FormRow from "../layout/FormRow.jsx";
 
 const FormParticipants = ({form}) => {
   return (
-      <Fieldset title="Participants">
+      <Fieldset legend="Participants">
         <FormRow justify={true}>
           <label htmlFor="nbOfAdults">Nombre d'adultes :</label>
           <input
