@@ -1,12 +1,25 @@
-# React + Vite
+# TP Formulaire de réservation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Formulaire
+Le formulaire correspond à la demande énoncée
+- Le fichier ReservationForm.jsx contient la validation Yup et la définition du form avec Formik. Il contient aussi un template intégrant les sous-composants (le formulaire est subdivisé en composants pour des raisons de lisibilité).
+- Dans le dossier form-parts, trois composants contiennent chacun une partie du formulaire avec la gestion des affichages conditionnels et les inputs
+- Dans le dossier layout, des composants de mise en forme pure du formulaire
 
-Currently, two official plugins are available:
+## Router
+J'ai utilisé un router pour la navigation dans l'application :
+- Une page d'accueil
+- La page de formulaire
+- Une page NotFound, accessible en cliquant sur "Participants" dans la navbar (cela ne correspond à ce stade à aucune page référencée)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fichiers concernés:
+- router.jsx dans lequel les routes sont définies
+- main.jsx où le RouterProvider est déclaré
+- App.jsx où un Outlet est déclaré pour l'affichage des pages de l'app (le layout avec navbar est défini dans App)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Context
+Pour appliquer un thème au site, j'ai utilisé un contexte et stocké la valeur pertinente dans le localStorage.
+Fichiers concernés :
+- ThemeContext.jsx pour définir contexte et provider
+- ThemeWrapper.jsx pour fournir un wrapper
+- ThemeSwitch.jsx qui est le composant qui permet de gérer le changement de thème dans l'interface
