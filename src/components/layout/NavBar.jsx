@@ -10,6 +10,9 @@ const NavBar = () => {
               <li>
                 <Link to="/reservation">Réserver</Link>
               </li>
+              <li>
+                <Link to="/participants">Participants</Link>
+              </li>
             </ul>
           </div>
         </div>
