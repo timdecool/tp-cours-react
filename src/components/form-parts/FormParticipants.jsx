@@ -10,7 +10,10 @@ const FormParticipants = ({form}) => {
           <input
               id="nbOfAdults"
               name="nbOfAdults"
-              onChange={form.handleChange}
+              onChange={e => {
+                const value = e.target.value < 0 ? 0:e.target.value;
+                form.setFieldValue("nbOfAdults", value);
+              }}
               value={form.values.nbOfAdults}
               type="number"
               className="input validator"

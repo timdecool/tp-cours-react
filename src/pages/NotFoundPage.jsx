@@ -3,7 +3,7 @@
 const NotFoundPage = () => {
   return (
       <>
-        <div className="hero bg-base-200 h-screen">
+        <div className="hero dark:bg-base-200 light:bg-base-900 h-screen">
           <div className="hero-content text-center">
             <div className="max-w-md">
               <h1 className="text-5xl font-bold">404</h1>
