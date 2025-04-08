@@ -32,7 +32,7 @@ const FormParticipants = ({form}) => {
                       form.setFieldValue('names', updatedNames);}
                     }
                     value={form.values.names[i] || ''}
-                    pattern="[A-Za-zÀ-ÿ\-]*"
+                    pattern="[A-Za-zÀ-ÿ\- ]*"
                 />
               </FormRow>
           ))}

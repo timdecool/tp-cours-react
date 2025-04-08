@@ -21,7 +21,7 @@ const ReservationForm = () => {
     nbOfAdults: yup.number().min(1, "Il doit y avoir au moins un adulte dans la réservation").required("Il faut un nombre d'adultes participant"),
     nbOfChildren: yup.number().min(0, "Il ne peut pas y avoir un nombre négatif d'enfants"),
     names: yup.array()
-        .of(yup.string().required("Les adultes doivent avoir un nom").min(1, "Il y a au moins un adulte avec un nom").matches(/^[A-Za-zÀ-ÿ-]*$/, "Le nom ne peut contenir que des lettres et des tirets"))
+        .of(yup.string().required("Les adultes doivent avoir un nom").min(1, "Il y a au moins un adulte avec un nom").matches(/^[A-Za-zÀ-ÿ- ]*$/, "Le nom ne peut contenir que des lettres, espaces et tirets"))
         .test("length-equals-nbOfAdults","Chaque adulte doit avoir un nom renseigné", function(value) {
           const {nbOfAdults} = this.parent;
           return value.length === nbOfAdults;
