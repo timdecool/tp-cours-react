@@ -3,6 +3,7 @@ import * as yup from "yup";
 import FormDates from "./form-parts/FormDates.jsx";
 import FormParticipants from "./form-parts/FormParticipants.jsx";
 import FormComment from "./form-parts/FormComment.jsx";
+import ErrorMessage from "./form-parts/ErrorMessage.jsx";
 
 const ReservationForm = () => {
 
@@ -10,11 +11,11 @@ const ReservationForm = () => {
     startDate: yup.date().min(new Date("2024-12-19"), "La date de début est trop anticipée").required("Il faut une date de début"),
     endDate: yup
         .date()
-        .max(new Date("2025-01-10"), "La date de fin est trop tardive")
-        .required("Il faut une date de fin")
         .when('startDate', (startDate) => {
           if(startDate) {
             return yup.date().min(startDate, "La date de fin doit être ultérieure à la date de début")
+                .max(new Date("2025-01-10"), "La date de fin est trop tardive")
+                .required("Il faut une date de fin")
           }
         }),
     nbOfAdults: yup.number().min(1, "Il doit y avoir au moins un adulte dans la réservation").required("Il faut un nombre d'adultes participant"),

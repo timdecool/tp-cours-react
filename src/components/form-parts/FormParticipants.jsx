@@ -10,10 +10,7 @@ const FormParticipants = ({form}) => {
           <input
               id="nbOfAdults"
               name="nbOfAdults"
-              onChange={e => {
-                const value = e.target.value < 0 ? 0:e.target.value;
-                form.setFieldValue("nbOfAdults", value);
-              }}
+              onChange={form.handleChange}
               value={form.values.nbOfAdults}
               type="number"
               className="input validator"
@@ -21,7 +18,7 @@ const FormParticipants = ({form}) => {
           />
         </FormRow>
         <div className="flex flex-col gap-3">
-          {[...Array(form.values.nbOfAdults)].map((_, i) => (
+          {form.values.nbOfAdults >= 0 && [...Array(form.values.nbOfAdults)].map((_, i) => (
               <FormRow key={i} justify={true}>
                 <label htmlFor={`names-${i}`}>Nom Adulte n°{i + 1} :</label>
                 <input
